@@ -2,8 +2,6 @@ package track
 
 import (
 	"encoding/json"
-	"fmt"
-	"log"
 	"net/http"
 	"net/url"
 
@@ -28,7 +26,6 @@ func (repo *repo) GetTracks(term string) (*DataApi, error) {
 	resultCached, found := repo.cache.Get(term)
 	if found {
 		result, _ := resultCached.(DataApi)
-		log.Println(fmt.Sprintf("Result for term [%s] in memory cache!", term))
 		return &result, nil
 	}
 	url := "https://itunes.apple.com/search?term=" + url.QueryEscape(term) + "&limit=200"
