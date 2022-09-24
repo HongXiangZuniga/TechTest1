@@ -16,7 +16,7 @@ func main() {
 	log.Println("Init API")
 	cache := cache.New(60*time.Minute, 0*time.Minute)
 	trackRepo := track.NewRepository(http.Client{}, cache)
-	trackService := track.NewService(trackRepo)
+	trackService := track.NewService(trackRepo, []track.Favorite{})
 	songsHandler := rest.NewUsersHandler(trackService)
 
 	r := rest.NewHandler(songsHandler)

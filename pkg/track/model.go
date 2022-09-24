@@ -61,3 +61,10 @@ type Price struct {
 	Value    int    `json:"valor"`
 	Currency string `json:"moneda"`
 }
+
+type Favorite struct {
+	BandName string `json:"nombre_banda"`
+	SongId   int    `json:"cancion_id"`
+	User     string `json:"usuario"`
+	Ranking  string `json:"ranking"`
+}
