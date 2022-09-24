@@ -70,7 +70,6 @@ func (port *port) AddFavorite(favorite Favorite) error {
 			}
 		}
 	}
-
 	return errors.New("Favorite is not valid")
 }
 
