@@ -1,7 +1,6 @@
 package rest
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/HongXiangZuniga/TestYapo/pkg/track"
@@ -22,7 +21,6 @@ func NewUsersHandler(Itunes track.Service) SongsHandler {
 
 func (port *port) GetSongsByBand(ctx *gin.Context) {
 	band := ctx.Query("band")
-	fmt.Println(band)
 	result, err := port.Track.GetTracks(band)
 	if err != nil {
 		ctx.JSON(404, gin.H{"error": err.Error()})
