@@ -24,10 +24,10 @@ func (port *port) GetSongsByBand(ctx *gin.Context) {
 	band := ctx.Query("name")
 	result, err := port.Track.GetTracks(band)
 	if err != nil {
-		ctx.JSON(404, gin.H{"error": err.Error()})
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.JSON(http.StatusOK, gin.H{"result": result})
+	ctx.JSON(http.StatusOK, result)
 	return
 }
 
@@ -35,14 +35,14 @@ func (port *port) AddFavorite(ctx *gin.Context) {
 	var favorite track.Favorite
 	err := ctx.Bind(&favorite)
 	if err != nil {
-		ctx.JSON(404, gin.H{"error": err.Error()})
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 	err = port.Track.AddFavorite(favorite)
 	if err != nil {
-		ctx.JSON(404, gin.H{"error": err.Error()})
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	ctx.JSON(http.StatusOK, gin.H{})
+	ctx.JSON(http.StatusNoContent, gin.H{})
 	return
 }
