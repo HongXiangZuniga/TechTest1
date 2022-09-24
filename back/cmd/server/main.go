@@ -20,7 +20,7 @@ func main() {
 	songsHandler := rest.NewUsersHandler(trackService)
 
 	r := rest.NewHandler(songsHandler)
-	err := godotenv.Load()
+	err := godotenv.Load("../.env")
 	if err != nil {
 		log.Println("No .env file found!")
 	}
