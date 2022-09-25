@@ -45,8 +45,9 @@ export default {
     getTracks: async function (band) {
       this.isActive = false;
       this.isSpinner = true;
+      console.log(process.env.VUE_APP_URL_API +"?name="+ encodeURIComponent(band))
       axios
-        .get('http://localhost:3000/search_tracks?name=' + encodeURIComponent(band))
+        .get(process.env.VUE_APP_URL_API +"?name="+ encodeURIComponent(band))
         .then(response => {
           this.isActive = true;
           this.songs = response.data.canciones;

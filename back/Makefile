@@ -1,3 +1,5 @@
+include .env
+export 
 run:
 	go mod download
 	go run cmd/server/api.go
@@ -17,6 +19,7 @@ docker-build:
 	-t  test-yapo:local .
 
 docker-run:
-	docker run --rm -it -p 3000:3000 \
+	docker run --rm -it -p $(PORT):$(PORT) \
 	--env-file ./.env \
 	test-yapo:local
+
