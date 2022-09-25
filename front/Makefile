@@ -5,6 +5,7 @@ install:
 	npm install
 
 run:
+	npm install
 	npm run serve -- --port $(PORT)
 
 build:
