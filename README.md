@@ -39,7 +39,7 @@ build <Hace un build de la app>
 
 lint < ejecuta el lint>
 
-docker-build-m1 <Levanta un docker para Apple Silicon(M1/M1PRO/M1MAX)>
+docker-build <Levanta un docker para Apple Silicon(M1/M1PRO/M1MAX)>
 
 docker-run <Lanza el docker>
 ```

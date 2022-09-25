@@ -18,7 +18,7 @@ unit-test:
 	npm run test:unit
 
 
-docker-build-m1:
+docker-build:
 	docker build \
 	-f build/docker/m1/Dockerfile \
 	-t test-yapo/front:local .
