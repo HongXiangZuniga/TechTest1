@@ -12,8 +12,4 @@ RUN npm run build
 # etapa de producción
 FROM nginx:stable-alpine as production-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html
-COPY --from=build-stage /app/config/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=build-stage /app/config/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
-RUN chmod +x /usr/share/nginx/html/write.sh
-CMD /usr/share/nginx/html/write.sh
