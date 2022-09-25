@@ -43,3 +43,6 @@ docker-build <Levanta un docker para Apple Silicon(M1/M1PRO/M1MAX)>
 
 docker-run <Lanza el docker>
 ```
+
+### Para probar
+Para probar ejecuta Make run en ambas carpetas posterior a la configuracion.
