@@ -1,15 +1,14 @@
 <template>
-  
-  <HelloWorld/>
+  <songs />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import songs from './components/Songs.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    songs
   }
 }
 </script>
