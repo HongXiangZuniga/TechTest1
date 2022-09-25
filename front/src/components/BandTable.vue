@@ -23,7 +23,7 @@
               {{ song.nombre_tema}}
             </td>
             <td>
-              {{song.preview_url}}
+              <a v-bind:href="song.preview_url">Preview</a>
             </td>
             <td>
               {{song.fecha_lanzamiento}}
