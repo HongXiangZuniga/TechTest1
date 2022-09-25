@@ -11,7 +11,7 @@ build:
 	go build cmd/server/api.go
 
 unit-test:
-	go test ./test
+	go test ./...
 
 docker-build:
 	docker build \
